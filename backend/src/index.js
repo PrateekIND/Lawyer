@@ -4,8 +4,9 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDb = require('./config/dbConnection');
 const authRoutes = require('./routes/authRoutes');
-// const lawyerRoutes = require('./routes/lawyerRoutes');
-// const firmRoutes = require('./routes/firmRoutes');
+const userRoutes = require('./routes/userRoutes')
+const lawyerRoutes = require('./routes/lawyerRoutes');
+const firmRoutes = require('./routes/firmRoutes');
 
 dotenv.config();
 
@@ -18,9 +19,10 @@ connectDb();
 
 // Routes
 app.use('/api/auth', authRoutes);         // Authentication routes
+app.use('/api', userRoutes)
 // app.use('/api/admin', adminRoutes);       // Admin routes
-// app.use('/api/lawyers', lawyerRoutes);    // Lawyer management routes
-// app.use('/api/firms', firmRoutes);        // Firm management routes
+app.use('/api/lawyers', lawyerRoutes);    // Lawyer management routes
+app.use('/api/firms', firmRoutes);        // Firm management routes
 
 // Start server
 const PORT = process.env.PORT || 5000;

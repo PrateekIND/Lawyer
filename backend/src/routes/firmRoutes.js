@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const firmController = require('../controllers/firmController');
+const { registerFirm, updateFirmProfile, addLawyer, removeLawyer} = require('../controllers/firmController');
 
-// Register a new firm
-router.post('/register', firmController.registerFirm);
 
-// Get all firms
-router.get('/', firmController.getAllFirms);
+router.post('/register', registerFirm);
+router.post("/addlawyer", addLawyer);
+router.get('/update', updateFirmProfile );
+router.delete("remove/:id", removeLawyer)
 
 module.exports = router;
