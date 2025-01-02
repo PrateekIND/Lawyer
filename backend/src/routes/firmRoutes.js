@@ -4,8 +4,8 @@ const { registerFirm, updateFirmProfile, addLawyer, removeLawyer} = require('../
 
 
 router.post('/register', registerFirm);
-router.post("/addlawyer", addLawyer);
-router.get('/update', updateFirmProfile );
-router.delete("remove/:id", removeLawyer)
+router.patch("/addlawyer/:id", addLawyer);
+router.patch('/update/:id', updateFirmProfile );
+router.patch("/remove/:id", removeLawyer)
 
 module.exports = router;

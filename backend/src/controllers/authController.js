@@ -38,4 +38,18 @@ const login = async (req, res) =>{
 
 }
 
-module.exports = {login, register}
+const currentUser = async (req, res) =>{
+    try {
+        if(!req.user){
+            return res.status(401).json({"message":"User is not logged In. Kindly Log in to access this route"})
+        }
+        const user = await User.findById(req.user.id).select("-password");
+        if(!user) return res.status(404).json({"message":"User not found"});
+        res.status(200).json(user);
+    }
+    catch (error) {
+        console.error(error)
+        res.status(500).json({"message":"An error occured"})
+    } 
+}
+module.exports = {login, register, currentUser}

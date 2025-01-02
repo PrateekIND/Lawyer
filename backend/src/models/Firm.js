@@ -43,6 +43,15 @@ const firmSchema = new mongoose.Schema(
     website: {
       type: String, // Firm's official website
     },
+    isApproved: {
+      type: Boolean,
+      default: false, // By default, the firm is not approved
+    },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User', // Refers to the user associated with the firm
+      required: true,
+    },
   },
   { timestamps: true }
 );
