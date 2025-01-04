@@ -20,8 +20,7 @@ const register = async (req, res) =>{
 const login = async (req, res) =>{
     try {
         const {email, password} =req.body;
-        console.log(email)
-        const user = await User.findOne({email});
+        const user = await User.findOne({email}).lean();
         if(!user) return res.status(404).json({"messaeg":"User not found"});
         const isMatched = await bcrypt.compare(password, user.password)
         if(!isMatched) return res.status(401).json({"message":"Invalid Creadentials"});
@@ -43,7 +42,7 @@ const currentUser = async (req, res) =>{
         if(!req.user){
             return res.status(401).json({"message":"User is not logged In. Kindly Log in to access this route"})
         }
-        const user = await User.findById(req.user.id).select("-password");
+        const user = await User.findById(req.user.id).select("-password").lean();
         if(!user) return res.status(404).json({"message":"User not found"});
         res.status(200).json(user);
     }

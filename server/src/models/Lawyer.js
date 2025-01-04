@@ -14,6 +14,10 @@ const LawyerSchema = new Schema({
     type: String,
     required: true,
   },
+  location: {
+    type: String, // City or region where the firm is located
+    required: true,
+  },
   role: {
     type: String,
     enum: ['individual', 'firm'], // Role can be 'individual' or 'firm'
