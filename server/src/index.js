@@ -7,6 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes')
 const lawyerRoutes = require('./routes/lawyerRoutes');
 const firmRoutes = require('./routes/firmRoutes');
+const AppointmentRoutes = require('./routes/appointmentRoutes');
 const authMiddleware = require('./middleware/authMiddleware');
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use('/api', userRoutes)
 // app.use('/api/admin', adminRoutes);       // Admin routes
 app.use('/api/lawyer',authMiddleware, lawyerRoutes);    // Lawyer management routes
 app.use('/api/firm',authMiddleware, firmRoutes);        // Firm management routes
+app.use('/api/appointments',authMiddleware, AppointmentRoutes); // Appointment routes
 
 // Start server
 const PORT = process.env.PORT || 5000;
