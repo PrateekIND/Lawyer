@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from '../../assets/logo.png'
+import { Link } from 'react-router-dom'
 import middle_image from '../../assets/middle-png.png'
-import location_image from '../../assets/location.png'
+// import location_image from '../../assets/location.png'
 import Mask_group from '../../assets/Mask-group.png'
 import text_head from '../../assets/text-head.png'
 import { Search, Calendar, MapPin } from 'lucide-react';

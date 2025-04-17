@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 // import { Menu, X } from "lucide-react";
 import logo from '../../assets/logo.png'
+import { Link } from "react-router-dom";
 const Navbar = () => {
     // const [isOpen, setIsOpen] = useState(false);
 
@@ -18,8 +19,8 @@ const Navbar = () => {
                     <a href="#" className="text-black text-xl ">Category</a>
                 </div>
                 <div className="flex space-x-8">
-                <a href="#" className="text-black text-xl">Login</a>
-                <a href="#"  className="bg-blue-900 hover:bg-blue-800 text-white font-semibold  rounded-md transition ">Register</a>
+                <Link to="/login" className="text-black text-xl">Login</Link>
+                <Link to="/signup"  className="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-0.5 px-1.5  rounded-md transition ">Register</Link>
                 </div>
             </div>
         </nav>
