@@ -16,6 +16,7 @@ import ChatAdvocate from './Component/LawyerPage/ChatAdvocate'
 function App() {
   return (
     
+    
     <Router>
       <Navbar />
       <Routes>
