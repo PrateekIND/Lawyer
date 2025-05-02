@@ -3,8 +3,8 @@ import logo from '../../assets/logo.png';
 
 const Footer = () => {
     return (
-        <footer className=" text-white py-10" style={{ backgroundColor: '#25416F' }}>
-            <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-8">
+        <footer className=" text-white py-10 10 w-full h-[580px] relative z-0" style={{ backgroundColor: '#25416F' }}>
+            <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-10  mt-[240px]">
 
                 {/* Logo Section */}
                 <div>

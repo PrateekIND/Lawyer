@@ -18,7 +18,7 @@ const Navbar = () => {
                     <a href="#" className="text-black text-xl mr-8 ">Aboutus</a>
                     <a href="#" className="text-black text-xl ">Category</a>
                 </div>
-                <div className="flex space-x-8">
+                <div className="flex space-x-8 mr-[50px]">
                 <Link to="/login" className="text-black text-xl">Login</Link>
                 <Link to="/signup"  className="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-0.5 px-1.5  rounded-md transition ">Register</Link>
                 </div>

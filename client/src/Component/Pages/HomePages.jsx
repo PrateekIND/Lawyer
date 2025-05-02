@@ -3,34 +3,24 @@ import logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import middle_image from '../../assets/middle-png.png'
 // import location_image from '../../assets/location.png'
-import Mask_group from '../../assets/Mask-group.png'
+import pri_headerimage1 from '../../assets/pri-headerimage1.png'
 import text_head from '../../assets/text-head.png'
 import { Search, Calendar, MapPin } from 'lucide-react';
 import { Button } from '@mui/material';
+import CardsSlider from '../../Component/Slider/CardsSlider';
+import Legal from '../../assets/Legal.png'
+import setup from '../../assets/Setup-image.png'
+import phoneImage from '../../assets/PhoneImage.png'
 const HomePage = () => {
     return (
         <>
-            {/* <nav className="bg-white  h-16 top-0 w-full z-50    ">
-        <div className=" mx-auto px-4 h-full flex justify-between items-center">
-          <div className=" flex  items-center space-x-2">
-            <img src={logo} alt="" className="h-10 w-auto" />
-          </div>
-          <div className="flex space-x-8">
-            <a href="#" className="text-black text-xl mr-8 ">Home</a>
-            <a href="#" className="text-black text-xl mr-8 ">Aboutus</a>
-            <a href="#" className="text-black text-xl ">Category</a>
-          </div>
-          <div className="flex space-x-8">
-            <a href="#" className="text-black text-xl">Login</a>
-            <a href="#" className="bg-blue-900 hover:bg-blue-800 text-white font-semibold  rounded-md transition ">Register</a>
-          </div>
-        </div>
-      </nav> */}
+
             <hero>
-                <div className='relative w-full h-[717.9px]  items-center'>
-                    <img src={Mask_group} alt=' ' className='w-full h-full object-cover' />
+                <div className='relative w-full   items-center m-0'>
+                    <img src={pri_headerimage1} alt=' ' className='w-[1440px] h-[717px] ' />
+                    {/* <div className="absolute inset-0 bg-blue-200 opacity-30"></div> */}
                     <img src={text_head} alt='' className='absolute  w-[480px]  h-[200px]flex items-center top-[30px] ml-[400px]' />
-                    <div className="bg-white rounded-2xl shadow-md mx-auto  flex flex-col items-center justify-center mt-[-200px]"
+                    <div className="bg-white relative z-10 rounded-2xl shadow-md mx-auto flex flex-col items-center justify-center mt-[-210px]"
                         style={{ width: '1100px', height: '175px' }}>
 
                         <div className="flex justify-center gap-10 text-lg font-semibold mb-4">
@@ -109,65 +99,130 @@ const HomePage = () => {
                 </div>
                 <div>
                     <img src={middle_image} alt="" />
+                    <img src={setup} alt='' className='h-[525px] w-[1363px] ml-[40px]' />
                 </div>
-
+                <CardsSlider />
+                <div className='flex items-center justify-center'>
+                    <img src={Legal} alt='' className='h-[532px] w-[670.6px] ' />
+                    <div className="max-w-sm  rounded-lg p-6 bg-white shadow-md font-sans mt-[35px] ">
+                        <h2 className="text-lg font-normal text-gray-800 mb-2">
+                            Connect with our{' '}
+                            <span className="text-orange-500 font-bold">Legal Advisors</span>
+                        </h2>
+                        <p className="text-sm text-gray-700">Reliable legal solutions tailored to your needs.</p>
+                        <p className="text-sm text-gray-700">Trust us to navigate complexities with expertise and integrity.</p>
+                        <p className="text-sm text-gray-700 mb-4">Your justice, our commitment.</p>
+                        <button
+                            // onClick={TalktoLawyer}
+                            className="mt-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded"
+                        >
+                            Talk to lawyer
+                        </button>
+                    </div>
+                </div>
             </section>
+            <div>
+                <h1>Near to your Lawyer</h1>
+            </div>
+            <div className=" flex items-center justify-center " >
+                <div className="max-w-6xl mx-auto rounded-[32px] p-10 flex flex-col md:flex-row items-center justify-between shadow-lg -mb-46 relative z-10" style={{ backgroundColor: '#3AAAA5' }}>
 
-            <footer className=" text-white py-10" style={{ backgroundColor: '#25416F' }}>
-                <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-8">
+                    {/* Left Content */}
+                    <div className="md:w-1/2 space-y-4">
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                            If You Would Like to Our Service to Download App
+                        </h2>
+                        <p className="text-sm text-gray-600">Description</p>
 
-                    {/* Logo Section */}
-                    <div>
-                        <img src={logo} alt="Logo" className="w-auto h-12" />
-                    </div>
-                    <div>
-                        <h2 className="text-lg font-semibold mb-4">Company</h2>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-blue-400">About Us</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Services</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Lawyer</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Testimonial</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Blog & News</a></li>
-                        </ul>
-                    </div>
+                        <p className="font-medium text-gray-800 text-sm">Get the link to download the app</p>
+                        <div className="flex gap-2">
+                            <input
+                                type="tel"
+                                placeholder="+91 Enter Phone Number"
+                                className="px-4 py-2 border border-gray-300 rounded-md w-full max-w-[250px] focus:outline-none"
+                            />
+                            <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                                Send SMS
+                            </button>
+                        </div>
 
-                    {/* Social Media */}
-                    <div>
-                        <h2 className="text-lg font-semibold mb-4">Social Media</h2>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-blue-400">Facebook</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Twitter</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Instagram</a></li>
-                            <li><a href="#" className="hover:text-blue-400">LinkedIn</a></li>
-                        </ul>
-                    </div>
-
-                    {/* Product */}
-                    <div>
-                        <h2 className="text-lg font-semibold mb-4">Product</h2>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-blue-400">Schedule Appointment</a></li>
-                            <li><a href="#" className="hover:text-blue-400">New Customer Forms</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Category</a></li>
-                            <li><a href="#" className="hover:text-blue-400">White Fillings</a></li>
-                        </ul>
+                        <div className="flex gap-4 mt-4">
+                            <button className="bg-black text-white px-4 py-2 rounded-md text-sm flex items-center gap-2">
+                                <i className="fab fa-apple"></i> Download on the App Store
+                            </button>
+                            <button className="bg-green-500 text-white px-4 py-2 rounded-md text-sm flex items-center gap-2">
+                                <i className="fab fa-google-play"></i> Download on the Play Store
+                            </button>
+                        </div>
                     </div>
 
-                    {/* Register */}
-                    <div>
-                        <h2 className="text-lg font-semibold mb-4">Register</h2>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-blue-400">FAQ</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Support Center</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Privacy & Policy</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Terms & Condition</a></li>
-                        </ul>
+                    {/* Right Image */}
+                    <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
+                        <div className="relative">
+                            <div className="absolute    z-0"  />
+                            <img
+                                src={phoneImage}
+                                alt="Phone"
+                                className="relative z-10  rounded-2xl w-[440px] h-[470px]  "
+                            />
+                        </div>
                     </div>
-
                 </div>
-            </footer>
-        </>
-    )
+                {/* <footer className=" text-white py-10 w-[1440px] h-[660px] absolute" style={{ backgroundColor: '#25416F' }}>
+                    <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-5 gap-8 mt-[350px]">
+
+                       
+                        <div>
+                            <img src={logo} alt="Logo" className="w-auto h-12" />
+                        </div>
+                        <div>
+                            <h2 className="text-lg font-semibold mb-4">Company</h2>
+                            <ul className="space-y-2">
+                                <li><a href="#" className="hover:text-blue-400">About Us</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Services</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Lawyer</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Testimonial</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Blog & News</a></li>
+                            </ul>
+                        </div>
+
+                  
+                        <div>
+                            <h2 className="text-lg font-semibold mb-4">Social Media</h2>
+                            <ul className="space-y-2">
+                                <li><a href="#" className="hover:text-blue-400">Facebook</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Twitter</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Instagram</a></li>
+                                <li><a href="#" className="hover:text-blue-400">LinkedIn</a></li>
+                            </ul>
+                        </div>
+
+                  
+                        <div>
+                            <h2 className="text-lg font-semibold mb-4">Product</h2>
+                            <ul className="space-y-2">
+                                <li><a href="#" className="hover:text-blue-400">Schedule Appointment</a></li>
+                                <li><a href="#" className="hover:text-blue-400">New Customer Forms</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Category</a></li>
+                                <li><a href="#" className="hover:text-blue-400">White Fillings</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2 className="text-lg font-semibold mb-4">Register</h2>
+                            <ul className="space-y-2">
+                                <li><a href="#" className="hover:text-blue-400">FAQ</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Support Center</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Privacy & Policy</a></li>
+                                <li><a href="#" className="hover:text-blue-400">Terms & Condition</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </footer> */}
+                </div>
+            </>
+            )
 }
 
-export default HomePage
+            export default HomePage
