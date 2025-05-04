@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import Aheaderimage from '../../assets/Aheader.png';
-import PaymentSlide from '../../assets/PayementSlide.png'
+import PaymentSlide from '../../assets/PayementSlide.png';
 
 const Payment = ({ selectedDate = "18 Sep, 2023", selectedTime = "5:30 P.M.", lawyerFees = 1230 }) => {
     const discountRate = 0.374; // 37.4%
@@ -8,27 +8,42 @@ const Payment = ({ selectedDate = "18 Sep, 2023", selectedTime = "5:30 P.M.", la
     const gst = discountedPrice * 0.18; // 18%
     const finalPrice = Math.round(discountedPrice + gst);
 
+    const handlePayment = () => {
+        // Implement payment functionality here
+        console.log("Payment button clicked!");
+    };
+
     return (
         <div>
-            <img src={Aheaderimage} alt='' className='w-full h-[200px] object-cover mt-[-10]' />
+            {/* Header Image */}
+            <img src={Aheaderimage} alt="Header" className='w-full h-[200px] object-cover mt-[-10px]' />
+
+            {/* Title */}
             <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold drop-shadow-lg text-center mt-[-190px]">
-                    We Find The Best For You!!
-                </h1>
-                <button
-                    // onClick={handleBuy}
-                    className="absolute top-2 right-2 bg-white text-black  px-3 py-1 text-sm rounded-md shadow-md mt-[70px]"
-                >
-                    Join As Lawyer
-                </button>
+                We Find The Best For You!!
+            </h1>
+
+            {/* Button - Join as Lawyer */}
+            <button
+                // onClick={handleBuy}   // Uncomment to handle functionality
+                className="absolute top-2 right-2 bg-white text-black px-3 py-1 text-sm rounded-md shadow-md mt-[70px]"
+            >
+                Join As Lawyer
+            </button>
+
+            {/* Payment Section Title */}
             <h1 className='text-2xl text-center mt-6 font-medium text-[#264373] font-Lexend'>
                 MAKE PAYMENT
             </h1>
-            <div className="flex max-w-5xl mx-auto shadow-lg rounded-lg overflow-hidden mt-10  h-[650px] w-[1000px] mb-40">
-                <img src={PaymentSlide} alt='' className='mt-[40px] ml-[40px] mb-[40px]' />
-                <div className="w-3/4 p-8  ml-30">
-                    <h2 className="text-xl font-semibold mb-2">SELECTED DATE AND TIME :</h2>
+
+            {/* Payment Details Section */}
+            <div className="flex max-w-5xl mx-auto shadow-lg rounded-lg overflow-hidden mt-10 h-[650px] w-[1000px] mb-40">
+                <img src={PaymentSlide} alt="Payment Slide" className='mt-[40px] ml-[40px] mb-[40px]' />
+                <div className="w-3/4 p-8 ml-30">
+                    <h2 className="text-xl font-semibold mb-2">SELECTED DATE AND TIME:</h2>
                     <p className="mb-6 text-sm">{selectedDate} & {selectedTime}</p>
 
+                    {/* Payment Breakdown Section */}
                     <div className="border border-black rounded-2xl p-6 max-w-md">
                         <h3 className="text-center font-bold border-b pb-2 mb-4">TALK TO LAWYER</h3>
                         <div className="space-y-2 text-sm">
@@ -45,7 +60,7 @@ const Payment = ({ selectedDate = "18 Sep, 2023", selectedTime = "5:30 P.M.", la
                                 <span>₹{Math.round(discountedPrice)}</span>
                             </div>
                             <div className="flex justify-between">
-                                <span>GST(18%)</span>
+                                <span>GST (18%)</span>
                                 <span>₹{gst.toFixed(2)}</span>
                             </div>
                             <div className="flex justify-between font-semibold">
@@ -59,15 +74,20 @@ const Payment = ({ selectedDate = "18 Sep, 2023", selectedTime = "5:30 P.M.", la
                             </div>
                         </div>
                     </div>
+
+                    {/* Make Payment Button */}
                     <div className='ml-[40px]'>
-                    <button className=" mt-6 bg-blue-900 text-white py-2 rounded-lg font-semibold hover:bg-blue-800 w-[300px] h-[50px]">
-                        MAKE PAYMENT
-                    </button>
-                </div>
+                        <button
+                            onClick={handlePayment} // Handle payment action
+                            className="mt-6 bg-blue-900 text-white py-2 rounded-lg font-semibold hover:bg-blue-800 w-[300px] h-[50px]"
+                        >
+                            MAKE PAYMENT
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Payment
+export default Payment;

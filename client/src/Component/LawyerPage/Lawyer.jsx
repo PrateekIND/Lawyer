@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
+import lawyerimage1 from '../../assets/lawyerimage1.png'
+import lawyerimage2 from '../../assets/lawyerimage2.png'
 import pri_headerimage from '../../assets/pri-headerimage.png'
 import pri_LawyerD from '../../assets/pri-LawyerD.png'
 import { Slider } from '@mui/material'
@@ -7,6 +9,26 @@ import testimonials from '../../assets/Testimonials.png'
 import phoneImage from '../../assets/PhoneImage.png'
 import { Button } from '@mui/material';
 
+const lawyers = [
+        {
+            name: "Hritik Roshan",
+            court: "at Delhi High Court Since 2015",
+            rating: "4.9 (105 Ratings)",
+            img: lawyerimage1,
+        },
+        {
+            name: "Imran Hashmi",
+            court: "at Delhi High Court Since 2015",
+            rating: "4.9 (105 Ratings)",
+            img: lawyerimage2,
+        },
+        {
+            name: "Katrina Kaif",
+            court: "at Delhi High Court Since 2015",
+            rating: "4.9 (105 Ratings)",
+            img: pri_LawyerD,
+        },
+    ];
 const Lawyer = () => {
   const [talktime, setTalktime] = useState(35)
   const pricePerMin = 22
@@ -22,8 +44,8 @@ const Lawyer = () => {
     <div className='relative   m-0'>
 
       <img src={pri_headerimage} alt=' ' className='w-[1440px] h-[450px] ' />
-      <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold drop-shadow-lg text-center">
-      We Find The Best For You!!
+      <h1 className="absolute  text-white text-3xl font-bold   text-center  mt-[-400px] ml-[525px]">
+        We Find The Best For You!!
       </h1>
       <button
         onClick={handleBuy}
@@ -35,7 +57,7 @@ const Lawyer = () => {
         <img src={pri_LawyerD} alt='' className=' bg-white rounded-full border-1 h-[350px] w-[300px] flex items-center' />
       </div>
       <div className="  w-[1280px] max-w-5xl mx-auto  p-6 bg-white rounded-t-[198px] rounded-b-[80px] shadow-lg border text-gray-800 font-sans mt-[-50px] ">
-        <h1 className="text-2xl font-bold text-center">Katrina Kaif</h1>
+        <h1 className="text-2xl font-bold text-center mt-6">Katrina Kaif</h1>
         <p className="text-center text-gray-500 mb-6">at Delhi High Court Since 2015</p>
 
         <div className="mb-6 h-[279x] w-[1258px] ml-[100px]">
@@ -121,14 +143,37 @@ const Lawyer = () => {
 
         <button
           onClick={handleBuy}
-          className="mb-4 ml-10 w-[150px] bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-md font-semibold"
+          className="mb-4 ml-10 w-[150px] text-white py-2 rounded-md font-semibold"style={{backgroundColor:"#264373"}}
         >
           Buy Talktime
         </button>
       </div>
-      <div className='w-[1000px] h-[860px] ml-[120px] flex items-center justify-center mt-[-100px]'>
-        <img src={testimonials} alt='' />
+      <div className='w-[1000px] h-[860px] ml-[100px] flex items-center justify-center mt-[-100px]'>
+        <img src={testimonials} alt='' className='ml-[170px]' />
       </div>
+      <div className="px-4 py-8 bg-white text-center mt-[-50px]">
+            <h2 className="text-3xl font-bold mb-8">Near to your Lawyer</h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center items-start   mb-20 ml-40 mr-40 ">
+                {lawyers.map((lawyer, index) => (
+                    <div
+                        key={index}
+                        className="  w-[300px]  h-[300px] p-6 rounded-xl shadow-md flex flex-col items-center" style={{ backgroundColor: "#FF7A0029" }}
+                    >
+                        <img
+                            src={lawyer.img}
+                            alt={lawyer.name}
+                            className="h-[250px] object-cover rounded-md mb-4"
+                        />
+                        <div className="text-center bg-white rounded-lg mt-[-50px]">
+                            <h3 className="font-semibold text-lg">{lawyer.name}</h3>
+                            <p className="text-gray-500 text-sm">{lawyer.court}</p>
+                            <p className="text-orange-500 text-sm mt-2">{lawyer.rating}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
       <div className=" flex items-center justify-center " >
         <div className="max-w-6xl mx-auto rounded-[32px] p-10 flex flex-col md:flex-row items-center justify-between shadow-lg -mb-46 relative z-10" style={{ backgroundColor: '#3AAAA5' }}>
 
