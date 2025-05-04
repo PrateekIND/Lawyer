@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import HomePage from './Component/Pages/HomePages';
+import HomePage from './Component/Pages/HomePages'
 import LawyerPage from './Component/lawyerPage/Lawyer';
 import Navbar from './Component/Navbar/Navbar';
 import SignUp from './Component/Auth/SignUp';
@@ -13,6 +13,7 @@ import BookingPage from './Component/Pages/BookingPage'
 import Payment from './Component/Pages/Payment'
 import BookingConfirmation from './Component/Pages/BookingConfirmation'
 import ChatAdvocate from './Component/LawyerPage/ChatAdvocate'
+import Profile from './Component/LawyerPage/Profile'
 function App() {
   return (
     
@@ -30,6 +31,7 @@ function App() {
         <Route path="/Payment" element={<Payment />} />
         <Route path="/BookingConfirmation" element={<BookingConfirmation />} />
         <Route path="/ChatAdvocate" element={<ChatAdvocate/>}/>
+        <Route path='/Profile' element ={<Profile/>}/>
       </Routes>
       <Footer/>
     </Router>
